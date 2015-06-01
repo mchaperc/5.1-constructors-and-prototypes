@@ -37,9 +37,30 @@ function expect(target) {
 // 
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
+function Dog(obj) {
+  this.status = 'normal';
+  this.hungry = true;
+  for (var prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      this[prop] = obj[prop];
+    }
+  }
+}
+
+function Human(obj) {
+  this.cool = false;
+  for (var prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      this[prop] = obj[prop];
+    }
+  }
+  this.pet = function(dog) {
+    dog.status = 'happy';
+  }
+  this.feed = function(dog) {
+    dog.hungry = false;
+  }
+}
 
 
 //        __                
